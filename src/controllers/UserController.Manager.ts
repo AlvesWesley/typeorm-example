@@ -5,11 +5,11 @@ import User from '../entities/User.DataMapper'
 
 export default class UserController {
   static async index(req: Request, res: Response): Promise<Response> {
-    return res.json(
-      await getManager().find(User, {
-        select: ['id', 'name', 'username', 'active', 'createdAt', 'updatedAt']
-      })
-    )
+    const users = await getManager().find(User, {
+      select: ['id', 'name', 'username', 'active', 'createdAt', 'updatedAt']
+    })
+
+    return res.json(users)
   }
 
   static async show(req: Request, res: Response): Promise<Response> {

@@ -4,11 +4,11 @@ import User from '../entities/User.ActiveRecord'
 
 export default class UserController {
   static async index(req: Request, res: Response): Promise<Response> {
-    return res.json(
-      await User.find({
-        select: ['id', 'name', 'username', 'active', 'createdAt', 'updatedAt']
-      })
-    )
+    const users = await User.find({
+      select: ['id', 'name', 'username', 'active', 'createdAt', 'updatedAt']
+    })
+
+    return res.json(users)
   }
 
   static async show(req: Request, res: Response): Promise<Response> {
