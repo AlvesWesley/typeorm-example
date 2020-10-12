@@ -6,12 +6,17 @@
   "author": "Wesley Alves <wesleyalves94sv@hotmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "dev": "tsnd --respawn --rs --transpile-only --require dotenv/config ./src/server"
+    "dev": "tsnd --respawn --rs --transpile-only --require dotenv/config ./src/server",
+    "migrate": "tsnd ./node_modules/typeorm/cli.js migration:run"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "env-var": "^6.3.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.4.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.28"
   },
   "devDependencies": {
     "@types/dotenv": "^8.2.0",
