@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "tsnd --respawn --rs --transpile-only --require dotenv/config ./src/server",
     "migrate": "tsnd ./node_modules/typeorm/cli.js migration:run",
-    "test": "mocha -r ts-node/register -r dotenv/config ./tests/**/*.test.ts --exit"
+    "test": "mocha -r ts-node/register -r dotenv/config ./tests/**/*.test.ts --exit dotenv_config_path=.env.test"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
