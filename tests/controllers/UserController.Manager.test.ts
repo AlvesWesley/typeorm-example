@@ -8,9 +8,9 @@ import { clearTableUser, createUser, userData, id } from '../resources/seeder'
 
 chai.use(chaiHTTP)
 
-const url = '/v1/repository/user'
+const url = '/v1/manager/user'
 
-describe('Data Mapper Pattern - Using repository', () => {
+describe('Data Mapper Pattern - Using manager', () => {
   beforeEach(async () => {
     await Database.init(dbConfig)
     await clearTableUser()
